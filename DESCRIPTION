@@ -1,0 +1,15 @@
+Package: SNPgrou
+Type: Package
+Title: Association of SNP to Multiple Phenotypic Traits Group
+Version: 0.1.0
+Author: Gang Peng
+Maintainer: Gang Peng <kevin.peng@mail.utoronto.ca>
+Description: Use linear discriminant analysis to associate SNP in genotype to 
+    to phenotype response. The response is categorical and have more than two levels.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Depends: R (>= 3.1.0)
+Imports: MASS
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 6.1.1
