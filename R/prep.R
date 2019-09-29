@@ -74,6 +74,6 @@ if (missing(delim)){
   attr(result, "alleleNames") <- alleles
 
  return(result)
-      }
+}
 
 
