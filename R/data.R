@@ -16,3 +16,4 @@
 #'  geneSNP
 #' }
 "geneSNP"
+"hapData"

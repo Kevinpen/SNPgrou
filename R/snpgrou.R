@@ -1,9 +1,25 @@
+#' Calculate metrics for how one or multiple locus is(are) related to phenotype
+#'
+#' This function use linear discrimimant anaysis to classify response phenotype according to
+#   genotype SNP, the response have more than two levels, genotype allow multi-allelic.
+#'
+#' @param x  A data frame containing one or multiple SNP data for every loucs, the first column
+#'   is the phenotype data, follow by SNP data column. If SNP data not alraedy in "SNP" type, this
+#'   function use prep function to prepare the data.
+#' @param rep Integer, the number of replication for the cross-validation procedures.
+#'
+#'
+#' @return object belong to "SNP" and "factor", with attributes of alleleNames
+#'
+#' @examples: snpgrou(geneSNP, 100)
+#' #  snp10001  snp10002  snp10003  snp10005  snp10008
+#' #  0.2946199 0.8362573 0.3413450 0.3141520 0.3190643
+#'
+#'
 #' @export
 
 
 ######################################### Concept
-#This function use linear discrimimant anaysis to classify response phenotype according to
-# genotype SNP, the response have more than two levels, genotype allow multi-allelelic.
 # To indicate what are the most important locus(loci) in related to the observed phenotype,
 # the analysis based on the idea that when using leave-one-out cross-validation to predicate
 # the phenotype, those locus with strong relation to phenotype should be able to accurately
@@ -15,7 +31,15 @@
 
 snpgrou<-
   function(x,rep){
-
+    if(is.null(x)) {
+      stop("No input data found.")
+    }
+    if(!(is.data.frame(x))) {
+      stop("The data input format need to be data frame.")
+    }
+    if(rep<1) {
+      stop("Please specify an interger greater than 1 for rep.")
+    }
     require(MASS)
     y<-x[, 1]
     n<-length(unique(y))
@@ -28,11 +52,11 @@ for(i in 1:rep){
 
 # Run for every locus
   for(j in 1:m){
-    x1<-prep(x[, j+1])
+    x1<-x[, j+1]
 
 # If the SNP data is not of type "SNP", then it should be prepared and transfer type first
     if (!( inherits(x1, "SNP"))) {
-      prep(x)
+      prep(x1)
     }
 
 # The parameter of lda function CV=TRUE, use cross-validation
@@ -55,3 +79,4 @@ for(i in 1:rep){
    return(gScore)
 
 }
+# [END]

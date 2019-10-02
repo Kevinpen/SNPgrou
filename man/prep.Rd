@@ -7,17 +7,20 @@
 prep(x, delim = NULL)
 }
 \arguments{
-\item{x, }{numeric data of all obeservation of nucleotides in single locus}
+\item{x, }{Factors, data of all obeservation of alleles in single locus}
 
-\item{delim}{character that separate the original nucleotides data of two homologue in one locus, could be empty}
+\item{delim}{character that separate the alleles in original data in one locus, could be empty}
 }
 \value{
-object belong to "snp" and "factor", with attributes of alleleNames
+object belong to "SNP" and "factor", with attributes of alleleNames
 }
 \description{
-Transform the data to class "snp" object, nucleotides separated with "/"
+Transform the data to class "SNP" object, with alleles separated with "/"
 }
 \examples{
+  s1<-prep(geneSNP$snp10001,delim="-") # This column original delimiter "-", replaced by "/"
+  s2<-prep(geneSNP$snp10002,delim=",") # This column original delimiter "," replaced by "/"
+  s3<-prep(geneSNP$snp10003)           # This column original data no delimiter, add "/"
 
 
 }

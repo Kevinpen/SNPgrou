@@ -10,6 +10,8 @@ License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Depends: R (>= 3.1.0)
-Imports: MASS
+Imports: 
+    MASS,
+    ggplot2
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 6.1.1
