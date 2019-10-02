@@ -11,7 +11,7 @@
 #'
 #' @return object belong to "SNP" and "factor", with attributes of alleleNames
 #'
-#' @examples: snpgrou(geneSNP, 100)
+#' @examples snpgrou(geneSNP, 100)
 #' #  snp10001  snp10002  snp10003  snp10005  snp10008
 #' #  0.2946199 0.8362573 0.3413450 0.3141520 0.3190643
 #'
@@ -60,7 +60,7 @@ for(i in 1:rep){
     }
 
 # The parameter of lda function CV=TRUE, use cross-validation
-    geneLda<-lda(y~x1,CV=TRUE)
+    geneLda<-MASS::lda(y~x1,CV=TRUE)
     tab<-table(y,geneLda$class)
     prop<-numeric(n)
 

@@ -20,7 +20,7 @@ object belong to "SNP" and "factor", with attributes of alleleNames
 This function use linear discrimimant anaysis to classify response phenotype according to
 }
 \examples{
-: snpgrou(geneSNP, 100)
+snpgrou(geneSNP, 100)
 #  snp10001  snp10002  snp10003  snp10005  snp10008
 #  0.2946199 0.8362573 0.3413450 0.3141520 0.3190643
 

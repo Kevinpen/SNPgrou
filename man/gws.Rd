@@ -22,7 +22,8 @@ strongly related loci can be get from summary.gws function
 Computer gscore for every locus and use ggplot to plot all the scores, data need preparation
 }
 \examples{
-:
+require(ggplot2)
+require(MASS)
 data(hapData)
 gws(hapData,5)
 

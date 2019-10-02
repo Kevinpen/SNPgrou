@@ -4,12 +4,15 @@
 \name{geneSNP}
 \alias{geneSNP}
 \title{Gene SNP for multiple loci with mutiple alleles}
-\format{A matrix with columns:
+\format{A data frame with columns:
 \describe{
-\item{pheRes}{The phenotypic trait response, with three categorical levels:
+\item{phenRes}{The phenotypic trait response, with three categorical levels:
 C, D and M.}
 \item{snp10001}{The SNP data for locus snp10001}
+\item{snp10002}{The SNP data for locus snp10002}
 \item{snp10003}{The SNP data for locus snp10003}
+\item{snp10005}{The SNP data for locus snp10005}
+\item{snp10008}{The SNP data for locus snp10008}
 }}
 \source{
 Toy sample data
@@ -21,8 +24,10 @@ geneSNP
 Toy sample data
 }
 \examples{
+data(geneSNP)
 \dontrun{
- geneSNP
+
+
 }
 }
 \keyword{datasets}

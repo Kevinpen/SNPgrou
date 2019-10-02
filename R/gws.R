@@ -12,7 +12,9 @@
 #' @return The generated plot, showing gscores of all loci, the actual gscores and most
 #'    strongly related loci can be get from summary.gws function
 #'
-#' @examples :
+#' @examples
+#' require(ggplot2)
+#' require(MASS)
 #' data(hapData)
 #' gws(hapData,5)
 #'
@@ -57,7 +59,7 @@ gws<-
     hscd<-data.frame("y"=hScore,"x"=names(hScore))
 
 # Plit the
-    plot<-ggplot(hscd,aes(x=x,y=y))+
+    plot<-ggplot2::ggplot(hscd,aes(x=x,y=y))+
       geom_point(size=1,colour="red") +
       geom_segment(aes(x=x,  xend=x, y=0, yend=y)) +
       theme( axis.text.x=element_blank(), axis.ticks.x=element_blank())+
