@@ -14,10 +14,10 @@ function use prep function to prepare the data.}
 \item{rep}{Integer, the number of replication for the cross-validation procedures.}
 }
 \value{
-object belong to "SNP" and "factor", with attributes of alleleNames
+The results of gScore for each locus
 }
 \description{
-This function use linear discrimimant anaysis to classify response phenotype according to
+This function use linear discriminant analysis to classify response phenotype according to
 }
 \examples{
 snpgrou(geneSNP, 100)

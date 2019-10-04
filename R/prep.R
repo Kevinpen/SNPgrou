@@ -23,6 +23,9 @@ function(x,delim=NULL){
   }
   x<-as.character(x)
 
+# Legitimate SNP data format conform to the convention(like in package "SNPassoc" and "GenABEL")
+# of 2 alleles separated by delimiter, after preparation delimiter changed to "/"
+
 # Check whether the SNP data is legitimate, for no delimiter case
   if(all(lapply(x,nchar)==2,na.rm=TRUE)){
     if(!(all(grepl("[ACGT]",x),na.rm=TRUE))){
@@ -38,19 +41,29 @@ function(x,delim=NULL){
     }
   }
 
-# Legitmate SNP data for single locus can only be 2-3 characters
-  else if(all(lapply(x,nchar) > 3,na.rm=TRUE)){
-  stop("SNP data exceed 3 character limit")
+# Legitmate SNP data for single locus can only be 2 or 3 characters
+  else if(all(lapply(x,nchar) > 3,na.rm=TRUE)| all(lapply(x,nchar) < 2,na.rm=TRUE)){
+  stop("SNP data exceed 3 character limit, or less than 2 character")
   }
 
-# No delimiter in data, add delimiter"/"
+# No delim parameter specified
   if (missing(delim)){
-  subStr<-paste(substring(x,1,1),substring(x,2,2),sep="/")
-  alleles<-unique(na.omit(c(substring(x,1,1),substring(x,2,2))))
 
+#  and the actual data do not contain delimiter, add delimiter"/"
+    if(all(lapply(x,nchar)==2,na.rm=TRUE)){
+    subStr<-paste(substring(x,1,1),substring(x,2,2),sep="/")
+    alleles<-unique(na.omit(c(substring(x,1,1),substring(x,2,2))))
+
+# No delim parameter specified, but actual data contain delimiter, substitue delimiter to "/"
+    }else{
+      subStr<-paste(substring(x,1,1),substring(x,3,3),sep="/")
+      alleles<-unique(na.omit(c(substring(x,1,1),substring(x,3,3))))
+    }
+
+# Delimiter specified as ""
   }else if(delim==""){
-  subStr<-paste(substring(x,1,1),substring(x,2,2),sep="/")
-  alleles<-unique(na.omit(c(substring(x,1,1),substring(x,2,2))))
+      subStr<-paste(substring(x,1,1),substring(x,2,2),sep="/")
+      alleles<-unique(na.omit(c(substring(x,1,1),substring(x,2,2))))
 
   }else if (is.character(delim)) {
 

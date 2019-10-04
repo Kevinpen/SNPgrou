@@ -41,7 +41,7 @@ snpgrou<-
       stop("Please specify an interger greater than 1 for rep.")
     }
     require(MASS)
-    y<-x[, 1]
+    y<-x[ , 1]
     n<-length(unique(y))
     m<-ncol(x)-1
     gScore<-numeric(m)
@@ -52,7 +52,7 @@ snpgrou<-
 
 # Run for every locus
     for(j in 1:m){
-      x1<-x[, j+1]
+      x1<-x[ , j+1]
 
 # If the SNP data is not of type "SNP", then it should be prepared and transfer type first
       if (!( inherits(x1, "SNP"))) {
