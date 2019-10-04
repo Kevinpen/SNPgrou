@@ -18,10 +18,10 @@
 
 prep<-
 function(x,delim=NULL){
-  x<-as.character(x)
   if(is.null(x)) {
-  stop("No input data found.")
+    stop("No input data found.")
   }
+  x<-as.character(x)
 
 # Check whether the SNP data is legitimate, for no delimiter case
   if(all(lapply(x,nchar)==2,na.rm=TRUE)){

@@ -66,5 +66,5 @@ gws<-
       labs(x="chrosomal_position",y="gscore")
     return(plot)
 
-  }
+}
 # [END]

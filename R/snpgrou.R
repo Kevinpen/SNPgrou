@@ -1,6 +1,6 @@
 #' Calculate metrics for how one or multiple locus is(are) related to phenotype
 #'
-#' This function use linear discrimimant anaysis to classify response phenotype according to
+#' This function use linear discriminant analysis to classify response phenotype according to
 #   genotype SNP, the response have more than two levels, genotype allow multi-allelic.
 #'
 #' @param x  A data frame containing one or multiple SNP data for every loucs, the first column
@@ -9,7 +9,7 @@
 #' @param rep Integer, the number of replication for the cross-validation procedures.
 #'
 #'
-#' @return object belong to "SNP" and "factor", with attributes of alleleNames
+#' @return The results of gScore for each locus
 #'
 #' @examples snpgrou(geneSNP, 100)
 #' #  snp10001  snp10002  snp10003  snp10005  snp10008
@@ -48,30 +48,30 @@ snpgrou<-
     rawScore<-array(numeric(), c(rep,m))
 
 # Iteration for the procedure
-for(i in 1:rep){
+  for(i in 1:rep){
 
 # Run for every locus
-  for(j in 1:m){
-    x1<-x[, j+1]
+    for(j in 1:m){
+      x1<-x[, j+1]
 
 # If the SNP data is not of type "SNP", then it should be prepared and transfer type first
-    if (!( inherits(x1, "SNP"))) {
-      prep(x1)
-    }
+      if (!( inherits(x1, "SNP"))) {
+        prep(x1)
+      }
 
 # The parameter of lda function CV=TRUE, use cross-validation
-    geneLda<-MASS::lda(y~x1,CV=TRUE)
-    tab<-table(y,geneLda$class)
-    prop<-numeric(n)
+      geneLda<-MASS::lda(y~x1,CV=TRUE)
+      tab<-table(y,geneLda$class)
+      prop<-numeric(n)
 
 # Calculate the prportion of correct predication
-    for(k in 1:n){
-      prop[k]<-tab[k, k]/sum(tab[k, ])
+      for(k in 1:n){
+        prop[k]<-tab[k, k]/sum(tab[k, ])
+      }
+      prop <- mean(prop)
+     rawScore[i,j]<-prop
     }
-    prop <- mean(prop)
-    rawScore[i,j]<-prop
   }
-}
    gScore<-colMeans(rawScore)
    names(gScore)<-colnames(x)[2:ncol(x)]
 
