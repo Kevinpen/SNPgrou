@@ -23,7 +23,6 @@ Computer gScore for every locus and use ggplot to plot all the scores, data need
 }
 \examples{
 require(ggplot2)
-require(MASS)
 data(hapData)
 gws(hapData,5)
 

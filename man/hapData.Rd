@@ -10,6 +10,7 @@
 1, 1 and 3.}
 \item{rs10399749}{The SNP data for locus rs10399749}
 \item{rs11260616}{The SNP data for locus rs11260616}
+
 }}
 \source{
 Package SNPassoc

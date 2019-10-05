@@ -77,4 +77,15 @@ snpgrou(geneSNP2,100)
 The result shows snp10002 has the highest gScore and geneSNP data has higher score compared to geneSNP2, consistent with the visualization.
 
 The result of gws function using hapData, is the nice picture in previous "Overview".
- 
+
+## Things to do
+- Add summary.snp function for a summary of type SNP data
+- Add summary.gws function for a summary of genowide gScore data
+- Add associate function for phenotype to single biallelic locus association, adapt to dominant, recessive, multiplicative, additive and over-dominant inheritence models.
+- A statistical analysis paper 
+
+## Acknowledgement 
+- Thanks package "phengen" inspired the concept of gScore.
+- Thanks package "SNPassoc" and "genABEL" for demonstrating common workflow of GWS.
+
+

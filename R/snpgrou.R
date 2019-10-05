@@ -12,11 +12,13 @@
 #' @return The results of gScore for each locus
 #'
 #' @examples snpgrou(geneSNP, 100)
-#' #  snp10001  snp10002  snp10003  snp10005  snp10008
-#' #  0.2946199 0.8362573 0.3413450 0.3141520 0.3190643
+#' # snp10001  snp10002  snp10003  snp10005  snp10008
+#' # 0.3166901 0.8362573 0.3582222 0.3354503 0.3279649
 #'
 #'
 #' @export
+#' @import MASS
+#'
 
 
 ######################################### Concept
@@ -30,53 +32,53 @@
 # mode in MASS package. Choose too large iteration time will be slow(several hundreds should be OK).
 
 snpgrou<-
-  function(x,rep){
-    if(is.null(x)) {
-      stop("No input data found.")
+    function(x, rep) {
+    if (is.null(x)) {
+        stop("No input data found.")
     }
-    if(!(is.data.frame(x))) {
-      stop("The data input format need to be data frame.")
+    if (! (is.data.frame(x))) {
+        stop("The data input format need to be data frame.")
     }
-    if(rep<1) {
+    if (rep < 1) {
       stop("Please specify an interger greater than 1 for rep.")
     }
     require(MASS)
-    y<-x[ , 1]
-    n<-length(unique(y))
-    m<-ncol(x)-1
-    gScore<-numeric(m)
-    rawScore<-array(numeric(), c(rep,m))
+    y <- x[ , 1]
+    n <- length(unique(y))
+    m <- ncol(x) - 1
+    gScore <- numeric(m)
+    rawScore <- array(numeric(), c(rep,m))
 
-# Iteration for the procedure
-  for(i in 1:rep){
+    # Iteration for the procedure
+    for (i in 1:rep) {
 
-# Run for every locus
-    for(j in 1:m){
-      x1<-x[ , j+1]
+    # Run for every locus
+    for (j in 1:m) {
+        x1 <- x[ , j+1]
 
-# If the SNP data is not of type "SNP", then it should be prepared and transfer type first
-      if (!( inherits(x1, "SNP"))) {
-        prep(x1)
+        # If the SNP data is not of type "SNP", then it should be prepared and transfer type first
+        if (! ( inherits(x1, "SNP"))) {
+            x[ , j+1]<- prep(x1)
+        }
+
+        # The parameter of lda function CV=TRUE, use cross-validation
+        geneLda <- MASS::lda(formula = y ~ x1, CV = TRUE)
+        tab <- table(y, geneLda$class)
+        prop <- numeric(n)
+
+        # Calculate the prportion of correct predication
+        for (k in 1:n) {
+            prop[k]<-tab[k, k]/sum(tab[k, ])
+        }
+        prop <- mean(prop)
+        rawScore[i,j] <- prop
       }
-
-# The parameter of lda function CV=TRUE, use cross-validation
-      geneLda<-MASS::lda(y~x1,CV=TRUE)
-      tab<-table(y,geneLda$class)
-      prop<-numeric(n)
-
-# Calculate the prportion of correct predication
-      for(k in 1:n){
-        prop[k]<-tab[k, k]/sum(tab[k, ])
-      }
-      prop <- mean(prop)
-     rawScore[i,j]<-prop
     }
-  }
-   gScore<-colMeans(rawScore)
-   names(gScore)<-colnames(x)[2:ncol(x)]
+    gScore <- colMeans(rawScore)
+    names(gScore) <- colnames(x)[2 : ncol(x)]
 
-# Result gScore indicate the importance of each locus in predicating phenotype
-   return(gScore)
+    # Result gScore indicate the importance of each locus in predicating phenotype
+    return(gScore)
 
 }
 # [END]

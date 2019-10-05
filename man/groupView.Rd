@@ -2,30 +2,27 @@
 % Please edit documentation in R/groupView.R
 \name{groupView}
 \alias{groupView}
-\title{Genowide computation and visualization}
+\title{Visualization of association of multiple loci with phenotype}
 \usage{
 groupView(genesnp)
 }
 \arguments{
-\item{hap}{The data from genowide phenotype records and SNP, in data frame format
-First column is the phenotype, followed by all genotype SNPs.
-The data scoure: from "SNPassoc" package, but phenotype data are simulated from binary to 3 levels}
-
-\item{rep}{The number of replication of cross-validation in calculating gScore
-(In genowide computation, larger than 10 rep will be slow)}
+\item{genesnp}{The data frame of mutiple loci SNP data.
+First column is the phenotype, followed by all genotype SNPs.}
 }
 \value{
-The generated plot, showing gScores of all loci, the actual gScores and most
-strongly related loci can be get from summary.gws function
+The generated plot, showing how well the SNPs predicate the phenotype, if there are
+strongly related loci in the data set then the plot will show well separated grouos, but
+which locus is most strongly related is not showing
 }
 \description{
-Computer gScore for every locus and use ggplot to plot all the scores, data need preparation
+Use lda function to train linear discriminant model from SNP data, then use this model to
+predicate phenotype, use ggplot visualize how well the predication separate the phenotype
+to groups
 }
 \examples{
 require(ggplot2)
-require(MASS)
-data(hapData)
-gws(hapData,5)
+data(geneSNP)
 
 
 }
