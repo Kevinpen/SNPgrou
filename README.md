@@ -12,7 +12,7 @@ You can install the released version of SNPgrou by:
 
 ``` r
 require("devtools")
-install.packages("SNPgrou")
+install_github("Kevinpen/SNPgrou")
 library("SNPgrou")
 ```
 
@@ -42,11 +42,11 @@ This package use lda function from MASS package, but to give an explicit metric 
 
 The package use GWS data from package "SNPassoc", but the original phenotype data is binary, here three levels phenotype is simulated. 
 
-Use snpgrou function on two toy sample data, can visually illustrate how well can the SNPs in multiple loci predicate phenotype. Use it on "geneSNP":
+Use groupview function on two toy sample data, can visually illustrate how well can the SNPs in multiple loci predicate phenotype. Use it on "geneSNP":
 
 ``` r
 data(geneSNP)
-snpgrou(geneSNP)
+groupview(geneSNP)
 ```
 The output will be like this:
 
@@ -58,7 +58,7 @@ If you use it on data "geneSNP2":
 
 ``` r
 data(geneSNP2)
-snpgrou(geneSNP2)
+groupview(geneSNP2)
 ```
 The output will be like this:
 
@@ -85,7 +85,7 @@ The result of gws function using hapData, is the nice picture in previous "Overv
 - A statistical analysis paper 
 
 ## Acknowledgement 
-- Thanks package "phengen" inspired the concept of gScore.
-- Thanks package "SNPassoc" and "genABEL" for demonstrating common workflow of GWS.
+- Thanks package "genphen"(DOI: 10.18129/B9.bioc.genphen, Author: Simo Kitanovski) inspired the concept of gScore.  
+- Thanks package "SNPassoc"(https://cran.r-project.org/web/packages/SNPassoc/index.html) authored by "Juan R González, Lluís Armengol, Elisabet Guinó, Xavier Solé, and Víctor Moreno" and "genABEL"(https://cran.r-project.org/src/contrib/Archive/GenABEL/) authored by "Lennart C. Karssen, Cornelia M. van Duijn and Yurii S. Aulchenko" for demonstrating common workflow of GWS.
 
 

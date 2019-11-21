@@ -11,7 +11,10 @@
 #'
 #' @return The results of gScore for each locus
 #'
-#' @examples snpgrou(geneSNP, 100)
+#' @examples
+#' require(MASS)
+#' data(geneSNP)
+#' snpgrou(geneSNP, 100)
 #' # snp10001  snp10002  snp10003  snp10005  snp10008
 #' # 0.3166901 0.8362573 0.3582222 0.3354503 0.3279649
 #'

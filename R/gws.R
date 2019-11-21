@@ -1,12 +1,12 @@
-#' Genowide computation and visualization
+#' Genome-wide computation and visualization
 #'
-#' Computer gScore for every locus and use ggplot to plot all the scores, data need preparation
+#' Compute gScore for every locus and use ggplot to plot all the scores, data need preparation
 #'
 #' @param hap The data from genowide phenotype records and SNP, in data frame format
 #'   First column is the phenotype, followed by all genotype SNPs.
 #'   The data scoure: from "SNPassoc" package, but phenotype data are simulated from binary to 3 levels
 #' @param rep The number of replication of cross-validation in calculating gScore
-#'   (In genowide computation, larger than 10 rep will be slow)
+#'   (In genome-wide computation, larger than 10 rep will be slow)
 #'
 #'
 #' @return The generated plot, showing gScores of all loci, the actual gScores and most
@@ -37,7 +37,7 @@ gws <-
     hap <- hap[ , -np]
 
     # Columns with too high correlation coeffcient result in collinearity and prevent lda
-    #   function to proceed anlysis, this situation rarely happen is real scenarios, but
+    #   function to proceed anlysis, this situation rarely happen in real scenarios, but
     #   to prevent program from crash they also should be filted out. If it did happen, then the
     #   locus is highgly relevent and should be printed out. np2 records columns with high
     #   correlation. Transfer the columns from factor to numeric first.
