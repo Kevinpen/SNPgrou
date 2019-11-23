@@ -26,4 +26,7 @@ summaryGws(gScore)
 "High gScore 0.787037 at chrosomal position: rs4661627"
 "High gScore 0.675926 at chrosomal position: rs12749939"
 "Loci below are excluded from the calculation because snnp data only contain one allel"
+#"rs6691424"  "rs7553868"  "rs10922638" "rs12097782" "rs6428582"
+ #"rs12739867" "rs189401"   "rs282036"   "rs526519"   "rs2818971"
+ #"rs12756456"
 }

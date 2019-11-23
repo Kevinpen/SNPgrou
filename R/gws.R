@@ -38,7 +38,7 @@ gws <-
         np <- c(np,j)
       }
     }
-    filt <- rownames(hap[np,]) # store unused loci name
+    filt <- colnames(hap[,np]) # store unused loci name
     hap <- hap[ , -np]
 
     # Columns with too high correlation coeffcient result in collinearity and prevent lda
