@@ -14,9 +14,14 @@
 #' gScore <- gws(hapData,5)
 #' plot.gws(gScore)
 #'
+<<<<<<< HEAD
 #' @import ggplot2
 #' @export
 #'
+=======
+#' @export
+#' @import ggplot2
+>>>>>>> 603ed0329075d4976e2ab02777eb90b3035fc2b7
 
 plot.gws <- function(gScore){
   if (! (is.data.frame(gScore))) {

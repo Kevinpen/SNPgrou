@@ -14,9 +14,14 @@
 #' is.gScore(gScore)
 #' [1] TURE
 #'
+<<<<<<< HEAD
 #'
 #'
 #'
+=======
+#' @export
+#' @import
+>>>>>>> 603ed0329075d4976e2ab02777eb90b3035fc2b7
 
 is.gScore <- function(gScore){
  return(inherits(gScore, "gScore"))
