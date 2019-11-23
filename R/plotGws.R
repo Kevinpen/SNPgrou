@@ -7,23 +7,20 @@
 #'
 #'
 #' @return The generated plot using ggplot2, showing gScores of all loci
-#'
+#' @export
 #' @examples
 #'
 #' data(hapData)
 #' gScore <- gws(hapData,5)
-#' plot.gws(gScore)
+#' plotGws(gScore)
 #'
-<<<<<<< HEAD
-#' @import ggplot2
-#' @export
 #'
-=======
-#' @export
+#'
 #' @import ggplot2
->>>>>>> 603ed0329075d4976e2ab02777eb90b3035fc2b7
 
-plot.gws <- function(gScore){
+
+plotGws <- function(gScore){
+
   if (! (is.data.frame(gScore))) {
     stop("The data input format need to be data frame.")
   }

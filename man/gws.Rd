@@ -24,7 +24,7 @@ Compute gScore for every locus, data need preparation
 \examples{
 
 data(hapData)
-gScore <- gws(hapData,5)
+gScore <- gws(hapData,3)
 
 
 }

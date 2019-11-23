@@ -21,9 +21,7 @@ Decide whether the data is of type "gScore"
 data(hapData)
 gScore <- gws(hapData,5)
 is.gScore(gScore)
-[1] TURE
-
-
+TRUE
 
 
 }
