@@ -2,6 +2,7 @@
 
 export(groupView)
 export(gws)
+export(plot.gws)
 export(prep)
 export(snpgrou)
 import(MASS)

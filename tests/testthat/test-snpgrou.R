@@ -4,7 +4,7 @@ data("geneSNP")
 
 set.seed(1234)
 x=geneSNP
-rep=100
+rep=10
 snpgrou<-
   function(x,rep)
 

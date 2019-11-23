@@ -18,9 +18,9 @@
 #' # snp10001  snp10002  snp10003  snp10005  snp10008
 #' # 0.3166901 0.8362573 0.3582222 0.3354503 0.3279649
 #'
-#'
-#' @export
 #' @import MASS
+#' @export
+#'
 #'
 
 
@@ -45,12 +45,12 @@ snpgrou<-
     if (rep < 1) {
       stop("Please specify an interger greater than 1 for rep.")
     }
-    require(MASS)
+
     y <- x[ , 1]
     n <- length(unique(y))
     m <- ncol(x) - 1
-    gScore <- numeric(m)
-    rawScore <- array(numeric(), c(rep,m))
+    gScore <- numeric(m) # empty vector for later calculation to fill in
+    rawScore <- array(numeric(), c(rep,m))# empty array for later calculation to fill in
 
     # Iteration for the procedure
     for (i in 1:rep) {

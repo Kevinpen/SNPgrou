@@ -9,9 +9,10 @@
 #' @return object belong to "SNP" and "factor", with attributes of alleleNames
 #'
 #' @examples
-#'   s1 <- prep(geneSNP$snp10001,delim="-") # This column original delimiter "-", replaced by "/"
-#'   s2 <- prep(geneSNP$snp10002,delim=",") # This column original delimiter "," replaced by "/"
-#'   s3 <- prep(geneSNP$snp10003)           # This column original data no delimiter, add "/"
+#' data(geneSNP)
+#' s1 <- prep(geneSNP$snp10001,delim="-") # This column original delimiter "-", replaced by "/"
+#' s2 <- prep(geneSNP$snp10002,delim=",") # This column original delimiter "," replaced by "/"
+#' s3 <- prep(geneSNP$snp10003)           # This column original data no delimiter, add "/"
 #'
 #'
 #' @export
@@ -36,7 +37,7 @@ prep <-
     # Check whether the SNP data is legitimate, for delimiter present case
     if (all(lapply(x, nchar) == 3,na.rm=TRUE)) {
         y <- c(substring(x, 1, 1),substring(x, 3, 3))
-        if (! (all(grepl("[ACGT]",na.omit(y))))) {
+        if (! (all(grepl("[ACGT]",stats::na.omit(y))))) {
             stop(" Data contain non SNP data")
       }
     }
@@ -52,30 +53,30 @@ prep <-
     # No delim parameter specified and the actual data do not contain delimiter, add delimiter"/"
     if (all(lapply(x,nchar) == 2, na.rm = TRUE)) {
         subStr <- paste(substring(x, 1, 1),substring(x, 2, 2),sep="/")
-        alleles <- unique(na.omit(c(substring(x, 1, 1),substring(x, 2, 2))))
+        alleles <- unique(stats::na.omit(c(substring(x, 1, 1),substring(x, 2, 2))))
 
     # No delim parameter specified, but actual data contain delimiter, substitue delimiter to "/"
       } else {
           subStr <- paste(substring(x, 1, 1),substring(x, 3, 3),sep="/")
-          alleles <- unique(na.omit(c(substring(x, 1, 1),substring(x, 3, 3))))
+          alleles <- unique(stats::na.omit(c(substring(x, 1, 1),substring(x, 3, 3))))
       }
 
     # Delimiter specified as ""
     } else if (delim == "") {
         subStr <- paste(substring(x, 1, 1),substring(x, 2, 2),sep="/")
-        alleles <- unique(na.omit(c(substring(x, 1, 1),substring(x, 2, 2))))
+        alleles <- unique(stats::na.omit(c(substring(x, 1, 1),substring(x, 2, 2))))
 
     } else if (is.character(delim)) {
 
       # Test whether the user specified delimiter contained in the data
-      if (! all(grepl(delim, na.omit(as.character(x)), fixed = TRUE))) {
+      if (! all(grepl(delim, stats::na.omit(as.character(x)), fixed = TRUE))) {
           stop("The delimiter you specified does not contained in your data")
 
       } else {
 
         # Change original deilimiter to "/"
         subStr <- gsub(delim,"/", x)
-        alleles <- unique(na.omit(c(substring(x, 1, 1),substring(x, 3, 3))))
+        alleles <- unique(stats::na.omit(c(substring(x, 1, 1),substring(x, 3, 3))))
       }
 
     } else {

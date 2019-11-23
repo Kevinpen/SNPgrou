@@ -2,29 +2,29 @@
 % Please edit documentation in R/gws.R
 \name{gws}
 \alias{gws}
-\title{Genowide computation and visualization}
+\title{Genome-wide computation}
 \usage{
 gws(hap, rep)
 }
 \arguments{
-\item{hap}{The data from genowide phenotype records and SNP, in data frame format
-First column is the phenotype, followed by all genotype SNPs.
+\item{hap}{The data from genome wide phenotype records and SNP, in data frame format
+First row is the phenotype, followed by all genotype SNPs in all loci.
 The data scoure: from "SNPassoc" package, but phenotype data are simulated from binary to 3 levels}
 
 \item{rep}{The number of replication of cross-validation in calculating gScore
-(In genowide computation, larger than 10 rep will be slow)}
+(In genome-wide computation, larger than 10 rep will be slow)}
 }
 \value{
-The generated plot, showing gScores of all loci, the actual gScores and most
-strongly related loci can be get from summary.gws function
+The object of type "gScore", with attribute of "filt", the actual gScores and other
+results can be get from summary.gws function
 }
 \description{
-Computer gScore for every locus and use ggplot to plot all the scores, data need preparation
+Compute gScore for every locus, data need preparation
 }
 \examples{
-require(ggplot2)
+
 data(hapData)
-gws(hapData,5)
+gScore <- gws(hapData,5)
 
 
 }

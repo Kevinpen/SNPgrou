@@ -13,6 +13,7 @@ C, D and M.}
 \item{snp10003}{The SNP data for locus snp10003}
 \item{snp10005}{The SNP data for locus snp10005}
 \item{snp10008}{The SNP data for locus snp10008}
+
 }}
 \source{
 Toy sample data
