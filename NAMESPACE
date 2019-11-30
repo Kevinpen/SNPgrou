@@ -2,10 +2,12 @@
 
 export(groupView)
 export(gws)
+export(is.SNP)
 export(is.gScore)
 export(plotGws)
 export(prep)
 export(snpgrou)
 export(summaryGws)
+export(summarySNP)
 import(MASS)
 import(ggplot2)

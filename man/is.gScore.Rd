@@ -11,7 +11,7 @@ is.gScore(gScore)
 First column is gSCore, followed by the related names of the loci in second column.}
 }
 \value{
-TURE if input is of class 'gSore', FALSE otherwise
+TURE if input is of class 'gScore', FALSE otherwise
 }
 \description{
 Decide whether the data is of type "gScore"

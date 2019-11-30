@@ -17,6 +17,7 @@
 #'
 #'
 #' @import ggplot2
+#'
 
 
 plotGws <- function(gScore){
@@ -33,7 +34,7 @@ plotGws <- function(gScore){
   geom_point(size=1,colour="red") +
   geom_segment(aes(x=gScore$x,  xend=gScore$x, y=0, yend=gScore$y)) +
   theme( axis.text.x = element_blank(), axis.ticks.x = element_blank()) +
-  labs(x="chrosomal_position",y="gScore")
+  labs(x="chromosomal_position",y="gScore")
   return(plot)
 
 }

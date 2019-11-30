@@ -5,7 +5,7 @@
 #' First column is gSCore, followed by the related names of the loci in second column.
 #'
 #'
-#' @return TURE if input is of class 'gSore', FALSE otherwise
+#' @return TURE if input is of class 'gScore', FALSE otherwise
 #'
 #' @examples
 #'
