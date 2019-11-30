@@ -37,6 +37,8 @@ lsf.str("package:SNPgrou")
 - plotGws
 - summaryGws
 - is.gScore
+- summarySNP
+- is.SNP
 
 The function prep() transform the data to class "SNP" object, with alleles separated by "/". The function snpgrou() input data prepared by prep function, use linear discriminant analysis to classify response phenotype according to genotype SNP, the response have more than two levels, genotype allow multi-allelic. The result of this function is a set of gScores for each locus, which is a metric for how strongly a locus is related to the phenotype. The function gws() accept input of genome wide SNP data and use snpgrou function to calculate and visualize the gScore of all loci.
 
@@ -81,10 +83,10 @@ snpgrou(geneSNP2,100)
 The result shows snp10002 has the highest gScore and geneSNP data has higher score compared to geneSNP2, consistent with the visualization.
 
 The result of gws function using hapData, is the a computation of genome-wide gScores of every loci, return an object of class "gScore". The values of these gScores can be viewed by running summaryGws(gScores); if using plotGws(gScore) to plot the gScores, the result will be like: 
+
 ![](./inst/extdata/Rplot_GWS.png) 
 
 ## Things to do
-- Add summary.snp function for a summary of type SNP data
 - Add associate function for phenotype to single biallelic locus association, adapt to dominant, recessive, multiplicative, additive and over-dominant inheritence models.
 - A statistical analysis paper 
 
