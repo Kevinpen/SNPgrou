@@ -6,7 +6,7 @@
 #'  it contains levels of genotype and attribute of "alleleNames"
 #'
 #'
-#' @return NULL
+#' @return A data frame contains the allele frequency and percentage
 #' @export
 #' @examples
 #' data(geneSNP)
@@ -79,7 +79,7 @@ summarySNP <- function(x) {
   print(geno)
 
   cat("\n\n This data contains Alleles:\n")
-  print(alleDf)
+  return (alleDf)
 
 }
 

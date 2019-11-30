@@ -11,6 +11,9 @@ summarySNP(x)
 \item{x}{The result data returned from prep function. it is a object of type "SNP" and "factor"
 it contains levels of genotype and attribute of "alleleNames"}
 }
+\value{
+A data frame contains the allele frequency and percentage
+}
 \description{
 Summarize the frequency and percentage of genotypes and alleles in the SNP data
 The input SNP data need prepared by prep() function

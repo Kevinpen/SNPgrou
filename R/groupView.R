@@ -45,7 +45,7 @@ groupView <-
     train <- MASS::lda(formula = phenRes~., data=genesnp)
 
     # Make prediction for phenotype from the model
-    snpPredict <- MASS::predict.lda(train)
+    snpPredict <- predict.lda(train)
     predData <- data.frame("phenotype" = genesnp$phenRes, lda = snpPredict$x)
 
     # Plot the predicated data

@@ -59,8 +59,8 @@ summaryGws <- function(gScore, threshold = 0.6) {
   }
   #Summary data not used in calculation in gws function
   cat("\n Loci below are excluded from the calculation because snp data only contain \n one allele:\n")
-  cat(attr(gScore, "filt"))
+  return(attr(gScore, "filt"))
 
-  return(NULL)
+
 }
 # [END]
