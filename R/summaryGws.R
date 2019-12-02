@@ -7,7 +7,13 @@
 #'
 #' @param threshold Define high gSore ss values that greater than this parameter
 #'
-#' @return NULL
+#' @return charcter Loci below are excluded from the calculation
+#'
+#' #'@references
+#'González JR1, Armengol L, Solé X, Guinó E, Mercader JM, Estivill X, Moreno V(2007).
+#'SNPassoc: an R package to perform whole genome association studies. Bioinformatics. 2007
+#'Mar 1;23(5):644-5. Epub 2007 Jan 31. DOI: 10.1093/bioinformatics/btm025.
+#'
 #' @export
 #' @examples
 #'

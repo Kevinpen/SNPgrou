@@ -90,8 +90,9 @@ The result of gws function using hapData, is the a computation of genome-wide gS
 - Add associate function for phenotype to single biallelic locus association, adapt to dominant, recessive, multiplicative, additive and over-dominant inheritence models.
 - A statistical analysis paper 
 
-## Acknowledgement 
-- Thanks package "genphen"(DOI: 10.18129/B9.bioc.genphen, Author: Simo Kitanovski) inspired the concept of gScore.  
-- Thanks package "SNPassoc"(https://cran.r-project.org/web/packages/SNPassoc/index.html) authored by "Juan R González, Lluís Armengol, Elisabet Guinó, Xavier Solé, and Víctor Moreno" and "genABEL"(https://cran.r-project.org/src/contrib/Archive/GenABEL/) authored by "Lennart C. Karssen, Cornelia M. van Duijn and Yurii S. Aulchenko" for demonstrating common workflow of GWS.
+## References 
+- González JR1, Armengol L, Solé X, Guinó E, Mercader JM, Estivill X, Moreno V(2007). SNPassoc: an R package to perform whole genome association studies. Bioinformatics. 2007 Mar 1;23(5):644-5. Epub 2007 Jan 31. DOI: 10.1093/bioinformatics/btm025.
 
-
+## Acknowledgments
+- Thanks package "genphen"(DOI: 10.18129/B9.bioc.genphen, Author: Simo Kitanovski) inspired the concept of gScore. 
+- This package was developed as part of an assessment for 2019 BCB410H: Applied Bioinformatics, University of Toronto, Toronto, CANADA.

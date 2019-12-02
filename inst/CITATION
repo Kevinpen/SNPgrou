@@ -5,8 +5,7 @@ citEntry(
   title    = "SNPgrou",
   author   = "Gang Peng",
   year     = "2019",
-  note     = "Unpublished"
-
+  note     = "Unpublished",
   textVersion = paste(
 
   )

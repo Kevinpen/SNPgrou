@@ -13,6 +13,14 @@ First column is gSCore, followed by the related names of the loci in second colu
 
 \item{threshold}{Define high gSore ss values that greater than this parameter}
 }
+\value{
+charcter Loci below are excluded from the calculation
+
+#'@references
+González JR1, Armengol L, Solé X, Guinó E, Mercader JM, Estivill X, Moreno V(2007).
+SNPassoc: an R package to perform whole genome association studies. Bioinformatics. 2007
+Mar 1;23(5):644-5. Epub 2007 Jan 31. DOI: 10.1093/bioinformatics/btm025.
+}
 \description{
 Summarize the actual gScore and other results from genome wide computation of gws()
 The input gScore must obtain from gws() return

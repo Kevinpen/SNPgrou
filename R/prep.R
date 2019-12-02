@@ -14,6 +14,10 @@
 #' s2 <- prep(geneSNP$snp10002,delim=",") # This column original delimiter "," replaced by "/"
 #' s3 <- prep(geneSNP$snp10003)           # This column original data no delimiter, add "/"
 #'
+#'@references
+#'González JR1, Armengol L, Solé X, Guinó E, Mercader JM, Estivill X, Moreno V(2007).
+#'SNPassoc: an R package to perform whole genome association studies. Bioinformatics. 2007
+#'Mar 1;23(5):644-5. Epub 2007 Jan 31. DOI: 10.1093/bioinformatics/btm025.
 #'
 #' @export
 

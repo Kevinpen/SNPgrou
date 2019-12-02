@@ -38,3 +38,8 @@ summarySNP(s3)
 #3       C        18      22.22
 #4       T        16      19.75
 }
+\references{
+González JR1, Armengol L, Solé X, Guinó E, Mercader JM, Estivill X, Moreno V(2007).
+SNPassoc: an R package to perform whole genome association studies. Bioinformatics. 2007
+Mar 1;23(5):644-5. Epub 2007 Jan 31. DOI: 10.1093/bioinformatics/btm025.
+}
