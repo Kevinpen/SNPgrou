@@ -52,6 +52,6 @@ groupView <-
     plot <- ggplot2::ggplot(predData) + geom_point(aes("x" = predData$lda.LD1, "y" = predData$lda.LD2,
                                                       colour = predData$phenotype), size = 2.5)
 
-    return (plot  + labs(colour = "Phnotype", x="lda.LD1",y="lda.LD2"))
+    return (plot  + labs(colour = "Phenotype", x="lda.LD1",y="lda.LD2"))
   }
 # [END]
