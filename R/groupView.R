@@ -45,12 +45,13 @@ groupView <-
     train <- MASS::lda(formula = phenRes~., data=genesnp)
 
     # Make prediction for phenotype from the model
-    snpPredict <- predict.lda(train)
+    snpPredict <- stats::predict(train)
     predData <- data.frame("phenotype" = genesnp$phenRes, lda = snpPredict$x)
 
     # Plot the predicated data
-    plot <- ggplot2::ggplot(predData) + geom_point(aes("x" = "lda.LD1", "y" = "lda.LD2",
+    plot <- ggplot2::ggplot(predData) + geom_point(aes("x" = predData$lda.LD1, "y" = predData$lda.LD2,
                                                       colour = predData$phenotype), size = 2.5)
-    return (plot)
+
+    return (plot  + labs(colour = "Phnotype", x="lda.LD1",y="lda.LD2"))
   }
 # [END]
