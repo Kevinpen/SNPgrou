@@ -15,6 +15,12 @@ require("devtools")
 install_github("Kevinpen/SNPgrou", build_vignettes = TRUE)
 library("SNPgrou")
 ```
+To run shinyApp:
+
+``` r
+runSNPgrou()
+```
+
 
 ## Overview
 
@@ -56,3 +62,5 @@ The package use GWS data from package "SNPassoc", but the original phenotype dat
 ## Acknowledgments
 
 - This package was developed as part of an assessment for 2019 BCB410H: Applied Bioinformatics, University of Toronto, Toronto, CANADA.
+
+
