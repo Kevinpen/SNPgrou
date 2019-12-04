@@ -1,6 +1,6 @@
 ---
-title: "SNPgrou"
-output: rmarkdown::html_vignette
+title: "SNPgrou Introduction"
+keep_md: true
 author: Gang Peng
 date: Dec. 2019
 vignette: >
@@ -9,21 +9,6 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
-```{r, include = FALSE}
-knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = "#>"
-)
-```
----
-title: "Introduction_SNPgrou"
-output: rmarkdown::html_vignette
-
-vignette: >
-  %\VignetteIndexEntry{Introduction_SNPgrou}
-  %\VignetteEngine{knitr::rmarkdown}
-  %\VignetteEncoding{UTF-8}
----
 
 
 ## Introduction
