@@ -1,8 +1,7 @@
 ---
 title: "Introduction_SNPgrou"
 output: rmarkdown::html_vignette
-author: Gang Peng
-date: Dec. 2019
+
 vignette: >
   %\VignetteIndexEntry{Introduction_SNPgrou}
   %\VignetteEngine{knitr::rmarkdown}
