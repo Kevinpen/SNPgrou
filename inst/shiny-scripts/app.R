@@ -3,7 +3,7 @@ data("geneSNP")
 data("geneSNP2")
 
 ui <- fluidPage(
-  titlePanel("groupView"),
+  titlePanel("SNPgrou"),
 
   sidebarLayout(
     sidebarPanel(
@@ -17,21 +17,35 @@ ui <- fluidPage(
                   selected = "geneSNP"),
 
     ),
-
-    plotOutput('plot1',width = "580px", height = "260px")
+    mainPanel(
+      h4("gScores"),
+      "The gScores of every loci in this SNP data:\n",
+      textOutput("selected_var"),
+      h4("groupView:"),
+    plotOutput('plot1',width = "580px", height = "260px"))
     )
   )
 
 
 
 server <- function(input, output) {
-  output$plot1 <- renderPlot({
-  snpdata <- switch(input$var,
-                 "geneSNP" = geneSNP,
-                 "geneSNP2" =geneSNP2)
-  groupView(snpdata)
 
-})
+
+  output$plot1 <- renderPlot({
+    snpdata <- switch(input$var,
+                      "geneSNP" = geneSNP,
+                      "geneSNP2" =geneSNP2)
+  groupView(snpdata)
+  })
+
+  output$selected_var <- renderText({
+    snpdata <- switch(input$var,
+                      "geneSNP" = geneSNP,
+                      "geneSNP2" =geneSNP2)
+    gScore<-snpgrou(snpdata,30)
+    paste( names(gScore),":",  round(gScore,7))
+  })
+
 }
 
 shinyApp(ui = ui, server = server)

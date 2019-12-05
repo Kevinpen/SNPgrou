@@ -1,6 +1,6 @@
 ---
 title: "SNPgrou Introduction"
-keep_md: true
+output: rmarkdown::html_vignette
 author: Gang Peng
 date: Dec. 2019
 vignette: >
